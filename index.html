@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>NASA!</title>
+    <script src="nasa.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Limelight" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" type="text/css" href="nasa.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body style="background: url('http://www.jb.man.ac.uk/astronomy/nightsky/M35.jpeg')">
+
+    <nav id="nav" class="navbar navbar-default" role="navigation">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+            <a class="navbar-brand" href="#"><img src="nasalogo.png" width="70" height="60" href="https://www.nasa.gov/"></a>
+            <!--<a class="navbar-brand" href="#">NASA!</a>-->
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+            <div class="col-sm-3 col-md-3">
+                <h4 style="font-family: 'Martel', serif;">&nbsp &nbsp NASAfy</h4>
+                <form class="navbar-form" role="search">
+                    <div class="input-group">
+                        <input type="text" id="input">
+                        <button onclick="sendApiRequest(); document.getElementById('id10').style.display='block'"><i class="glyphicon glyphicon-search"></i></button>
+                    </div>
+            </div>
+            </form>
+        </div>
+
+        </div>
+        <!-- /.navbar-collapse -->
+    </nav>
+    
+    <div class="w3-container">
+                    <div id="id01" class="w3-modal">
+                        <div class="w3-modal-content">
+                            <header class="w3-container w3-teal">
+                                <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+                                <h2>Sun</h2>
+                            </header>
+                            <div class="w3-container">
+                                <p>The Sun is the star at the center of the Solar System. It is a nearly perfect sphere of hot plasma,[13][14] with internal convective motion that generates a magnetic field via a dynamo process.[15] It is by far the most
+                                    important source of energy for life on Earth. Its diameter is about 109 times that of Earth, and its mass is about 330,000 times that of Earth, accounting for about 99.86% of the total mass of the Solar System.16] About
+                                    three quarters of the Sun's mass consists of hydrogen (~73%); the rest is mostly helium (~25%), with much smaller quantities of heavier elements, including oxygen, carbon, neon, and iron</p>
+                            </div>
+                            <footer class="w3-container w3-teal">
+                            </footer>
+                        </div>
+                    </div>
+                </div>
+
+    <div class="w3-container">
+        <div id="id10" class="w3-modal"
+            <div class="w3-modal-content">
+                <header class="w3-container w3-teal">
+                    <span onclick="document.getElementById('id10').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+                    <h2 style="font-family: 'Martel', serif;"> NASAfy </h2>
+                </header>
+                <div class="w3-container" id = "whiten">
+                    <p id="edit"></p>
+                </div>
+                <footer class="w3-container w3-teal">
+                    <p>NASAfy presents the word closest to the one searched available in the NASA API.</p>
+                </footer>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container">
+
+        <h2 id="title" style="color: white; font-family: 'Martel', serif; font-size= 50px;">THE SOLAR SYSTEM</h2>
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+                <li data-target="#myCarousel" data-slide-to="3"></li>
+                <li data-target="#myCarousel" data-slide-to="4"></li>
+                <li data-target="#myCarousel" data-slide-to="5"></li>
+                <li data-target="#myCarousel" data-slide-to="6"></li>
+                <li data-target="#myCarousel" data-slide-to="7"></li>
+                <li data-target="#myCarousel" data-slide-to="8"></li>
+
+                <!--< /ol>-->
+            </ol>
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
+                <div class=" item active hover size">
+                    <img src="p4.png" alt="first pic" class="hover transition" onclick="document.getElementById('id01').style.display='block'">
+
+                </div>
+
+                <div class="w3-container">
+                    <div id="id01" class="w3-modal">
+                        <div class="w3-modal-content">
+                            <header class="w3-container w3-teal">
+                                <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+                                <h2>Sun</h2>
+                            </header>
+                            <div class="w3-container">
+                                <p>The Sun is the star at the center of the Solar System. It is a nearly perfect sphere of hot plasma,[13][14] with internal convective motion that generates a magnetic field via a dynamo process.[15] It is by far the most
+                                    important source of energy for life on Earth. Its diameter is about 109 times that of Earth, and its mass is about 330,000 times that of Earth, accounting for about 99.86% of the total mass of the Solar System.16] About
+                                    three quarters of the Sun's mass consists of hydrogen (~73%); the rest is mostly helium (~25%), with much smaller quantities of heavier elements, including oxygen, carbon, neon, and iron</p>
+                            </div>
+                            <footer class="w3-container w3-teal">
+                            </footer>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item hover size">
+                    <img src="p9.png" id = "mercury" alt="seventh pic" class="hover transition" onclick="document.getElementById('id13').style.display='block'">
+                </div>
+
+                <div class="w3-container">
+                    <div id="id13" class="w3-modal">
+                        <div class="w3-modal-content">
+                            <header class="w3-container w3-teal">
+                                <span onclick="document.getElementById('id13').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+                                <h2>Mercury</h2>
+                            </header>
+                            <div class="w3-container">
+                                <p>Mercury is the smallest and innermost planet in the Solar System. Its orbital period around the Sun of 88 days is the shortest of all the planets in the Solar System. It is named after the Roman deity Mercury, the messenger
+                                    to the gods. </p>
+                            </div>
+                            <footer class="w3-container w3-teal">
+                            </footer>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item hover size ">
+                    <img src="p2.png " alt="tenth pic" class="hover transition " onclick="document.getElementById( 'id14').style.display='block'">
+                </div>
+
+                <div class="w3-container ">
+                    <div id="id14" class="w3-modal">
+                        <div class="w3-modal-content">
+                            <header class="w3-container w3-teal">
+                                <span onclick="document.getElementById( 'id14').style.display='none' " class="w3-button w3-display-topright">&times;</span>
+                                <h2>Venus</h2>
+                            </header>
+                            <div class="w3-container">
+                                <p>Venus is the second planet from the Sun, orbiting it every 224.7 Earth days. It has the longest rotation period of any planet in the Solar System and rotates in the opposite direction to most other planets. It has no natural
+                                    satellites.</p>
+                            </div>
+                            <footer class="w3-container w3-teal">
+                            </footer>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item hover size ">
+                    <img src="p3.png " alt="tenth pic" class="hover transition " onclick="document.getElementById( 'id15').style.display='block'">
+                </div>
+
+                <div class="w3-container ">
+                    <div id="id15" class="w3-modal">
+                        <div class="w3-modal-content">
+                            <header class="w3-container w3-teal">
+                                <span onclick="document.getElementById( 'id15').style.display='none' " class="w3-button w3-display-topright">&times;</span>
+                                <h2>Earth</h2>
+                            </header>
+                            <div class="w3-container">
+                                <p>Earth, otherwise known as the World or the Globe, is the third planet from the Sun and the only object in the Universe known to harbor life. It is the densest planet in the Solar System and the largest of the four terrestrial
+                                    planets.</p>
+                            </div>
+                            <footer class="w3-container w3-teal">
+                            </footer>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item hover size">
+                    <img src="p6.png" alt="sixth pic" class="hover transition" onclick="document.getElementById('id03').style.display='block'">
+                </div>
+
+                <div class="w3-container">
+                    <div id="id03" class="w3-modal">
+                        <div class="w3-modal-content">
+                            <header class="w3-container w3-teal">
+                                <span onclick="document.getElementById('id03').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+                                <h2>Mars</h2>
+                            </header>
+                            <div class="w3-container">
+                                <p>Mars is the fourth planet from the Sun and the second-smallest planet in the Solar System, after Mercury. </p>
+                            </div>
+                            <footer class="w3-container w3-teal">
+                            </footer>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item hover size ">
+                    <img src="p10.png " alt="tenth pic " class="hover transition " onclick="document.getElementById( 'id07').style.display='block'">
+                </div>
+
+                <div class="w3-container ">
+                    <div id="id07" class="w3-modal">
+                        <div class="w3-modal-content">
+                            <header class="w3-container w3-teal">
+                                <span onclick="document.getElementById( 'id07').style.display='none' " class="w3-button w3-display-topright">&times;</span>
+                                <h2>Jupiter</h2>
+                            </header>
+                            <div class="w3-container">
+                                <p>Jupiter is the fifth planet from the Sun and the largest in the Solar System. It is a giant planet with a mass one-thousandth that of the Sun, but two and a half times that of all the other planets in the Solar System combined.</p>
+                            </div>
+                            <footer class="w3-container w3-teal">
+                            </footer>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item hover size">
+                    <img src="saturnupdate.png" alt="fifth pic" class="hover transition" id="saturn" onclick="document.getElementById('id02').style.display='block'">
+                </div>
+
+                <div class="w3-container">
+                    <div id="id02" class="w3-modal">
+                        <div class="w3-modal-content">
+                            <header class="w3-container w3-teal">
+                                <span onclick="document.getElementById('id02').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+                                <h2>Saturn</h2>
+                            </header>
+                            <div class="w3-container">
+                                <p>Saturn is the sixth planet from the Sun and the second-largest in the Solar System, after Jupiter. It is a gas giant with an average radius about nine times that of Earth.</p>
+                            </div>
+                            <footer class="w3-container w3-teal">
+                            </footer>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="item hover size">
+                    <img src="p8.png" alt="fifth pic" class="hover transition" onclick="document.getElementById('id16').style.display='block'">
+                </div>
+
+                <div class="w3-container">
+                    <div id="id16" class="w3-modal">
+                        <div class="w3-modal-content">
+                            <header class="w3-container w3-teal">
+                                <span onclick="document.getElementById('id16').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+                                <h2>Uranus</h2>
+                            </header>
+                            <div class="w3-container">
+                                <p>Uranus is the seventh planet from the Sun. It has the third-largest planetary radius and fourth-largest planetary mass in the Solar System.</p>
+                            </div>
+                            <footer class="w3-container w3-teal">
+                            </footer>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div class="item hover size ">
+                    <img src="p7.png " alt="seventh pic " class="hover transition " onclick="document.getElementById( 'id17').style.display='block' ">
+                </div>
+
+                <div class="w3-container ">
+                    <div id="id17" class="w3-modal ">
+                        <div class="w3-modal-content ">
+                            <header class="w3-container w3-teal ">
+                                <span onclick="document.getElementById( 'id17').style.display='none' " class="w3-button w3-display-topright ">&times;</span>
+                                <h2>Neptune</h2>
+                            </header>
+                            <div class="w3-container ">
+                                <p>Neptune is the eighth and farthest known planet from the Sun in the Solar System. In the Solar System, it is the fourth-largest planet by diameter, the third-most-massive planet, and the densest giant planet.</p>
+                            </div>
+                            <footer class="w3-container w3-teal ">
+                            </footer>
+                        </div>
+                    </div>
+                </div>
+
+                
+            </div>
+
+            <!-- Left and right controls -->
+            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control"href="#myCarousel" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>
